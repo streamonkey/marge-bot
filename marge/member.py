@@ -8,7 +8,7 @@ class Member(gitlab.Resource):
 
     @classmethod
     def fetch_by_id(cls, project_id, member_id, api):
-        info = api.call(GET('/projects/%s/members/%s' % (project_id, member_id)))
+        info = api.call(GET('/projects/%s/members/all/%s' % (project_id, member_id)))
         return cls(api, info)
 
     @property
